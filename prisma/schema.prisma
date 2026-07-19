@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Student {
+  id         Int                @id @default(autoincrement())
+  name       String
+  rollNumber String             @unique
+  course     String
+  year       Int
+  semester   Int
+  password   String
+  selections StudentSelection[]
+}
+
+model Subject {
+  id             Int                @id @default(autoincrement())
+  type           String             // GE, DSE, SEC, VAC
+  name           String
+  maxCapacity    Int
+  targetYear     Int
+  targetSemester Int
+  courseSpecific String?            // Maps course constraints (e.g. 'BSc(H) Computer Science')
+  department     String?            // Prevents student from choosing home department papers
+  selections     StudentSelection[]
+}
+
+model StudentSelection {
+  id           Int     @id @default(autoincrement())
+  studentId    Int
+  subjectId    Int
+  categorySlot String  // 'GE', 'DSE', 'SEC', 'VAC' OR 'choice_0', 'choice_1', 'choice_2' for Year 4
+  student      Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  subject      Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, categorySlot]) 
+  @@unique([studentId, subjectId]) 
+}
