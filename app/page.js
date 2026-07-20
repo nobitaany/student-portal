@@ -43,8 +43,8 @@ export default function LoginPage() {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-          <label style={{ fontSize: '0.85rem', fontWeight: '6px', color: '#4b5563' }}>Portal Password</label>
-          <input placeholder="Alphanumeric key" type="password" required value={formData.password} onChange={e => setFormData({...formData, password: e.target.value})} style={{ padding: '0.75rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '1rem' }} />
+          <label style={{ fontSize: '0.85rem', fontWeight: '6px', color: '#4b5563' }}>Password</label>
+          <input placeholder="password" type="password" required value={formData.password} onChange={e => setFormData({...formData, password: e.target.value})} style={{ padding: '0.75rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '1rem' }} />
         </div>
         
         <button type="submit" disabled={loading} style={{ background: '#2563eb', color: 'white', padding: '0.8rem', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: 'bold', fontSize: '1rem', marginTop: '0.5rem' }}>
