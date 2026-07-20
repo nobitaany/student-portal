@@ -24,7 +24,6 @@ async function main() {
     { type: 'DSE', name: 'AUDITING', maxCapacity: 60, targetYear: 3, targetSemester: 5, courseSpecific: 'B.COM. (HONS.)', department: 'COMMERCE' },
     { type: 'DSE', name: 'INVESTMENT PORTFOLIO OPTIMISATION', maxCapacity: 60, targetYear: 3, targetSemester: 5, courseSpecific: 'BBE', department: 'BBE' },
     { type: 'SEC', name: 'E-Tourism', maxCapacity: 60, targetYear: 3, targetSemester: 5 },
-    { type: 'VAC', name: 'Emotional Intelligence', maxCapacity: 60, targetYear: 3, targetSemester: 5 },
 
     // --- Semester 7 (Year 4) Pool (Complete Computer Science DSE + GE Sets) ---
     { type: 'GE', name: 'PEOPLE MANAGEMENT', maxCapacity: 60, targetYear: 4, targetSemester: 7, department: 'COMMERCE' },
